@@ -760,33 +760,32 @@
 
 
 
+  <script src="/source/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
 
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('NaN', () => {
-    var GUEST = ['nick', 'mail', 'link'];
+    //这里改为从本地加载
+  
+  <script src="/source/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
     });
     new Valine({
-      el         : '#valine-comments',
-      verify     : true,
-      notify     : true,
-      appId      : '',
-      appKey     : '',
-      placeholder: "欢迎交流",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: '',
+        appKey: '',
+        placeholder: '欢迎交流',
+        avatar:'mm',
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        pageSize:'10' || 10,
     });
-  }, window.Valine);
-});
-</script>
+    
+  </script>
+
 
   
 
