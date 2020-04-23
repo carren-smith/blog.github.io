@@ -578,28 +578,6 @@
 
 
 
- 
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: true,
-        notify: true,
-        appId: '9g9zUXG1hUuxzPmobxH8k7iN-gzGzoHsz',
-        appKey: 'uTa9jOzI2czUT6GAdvKukfG0',
-        placeholder: '欢迎交流',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
 
 
   
